@@ -1,7 +1,13 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\models\ContactForm */
+/* 
+
+
+
+Display the two graphs given by the controller
+
+*/
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;

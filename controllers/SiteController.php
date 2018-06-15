@@ -58,18 +58,6 @@ class SiteController extends Controller
             ],
         ];
     }
-
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
      /**
      * Function that compares an ip from the access list to an ip from the database
      * 
@@ -93,6 +81,9 @@ class SiteController extends Controller
         return 0;
     }
 
+    /**
+     * Pass the logs and locations to the view
+     */
     public function actionIndex() {
         $logs = Logs::find()->all();
 
@@ -106,6 +97,10 @@ class SiteController extends Controller
     }
 
 
+    /**
+     * Create a graph based on the number of hits by location
+     * And create a graph based on the number of hits by website
+     */
     public function actionResults() {
         $logs = Logs::find()->all();
 
@@ -229,6 +224,7 @@ class SiteController extends Controller
         $form = new FindForm();
         return $this->render('find', ['model' => $form]);
     }
+    // Go to the website and get the info about the given ip
     public function actionSearch() {
         $model = new FindForm();
         if( $model->load(Yii::$app->request->post())){

@@ -1,6 +1,9 @@
 <?php
     use yii\helpers\Html;
     use yii\widgets\LinkPager;
+    /*
+    Display all the logs and Locations from my sql
+     */
 ?>
 <h1>Locations</h1>
 <ul>
